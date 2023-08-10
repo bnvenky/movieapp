@@ -1,20 +1,18 @@
-
-
-import React, { useState } from 'react';
-import MovieCard from './MovieCard';
+import React, { useState } from "react";
+import MovieCard from "./MovieCard";
 
 export default function SearchMovie() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
   const searchMovies = async (e) => {
     e.preventDefault();
 
     if (!query) {
-      return; 
+      return;
     }
 
-    const apiKey = 'e8035dd25b1baeef86f5fd9f71e15395';
+    const apiKey = "e8035dd25b1baeef86f5fd9f71e15395";
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`;
 
     try {
